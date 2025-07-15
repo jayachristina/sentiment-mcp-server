@@ -1,0 +1,24 @@
+2025-07-11 14:32:51,239 jbaskara-mac /opt/homebrew/Cellar/openjdk@21/21.0.7/libexec/openjdk.jdk/Contents/Home/bin/java[48924] ERROR [io.qua.run.Application] (Quarkus Main Thread) Port 8080 seems to be in use by another process. Quarkus may already be running or the port is used by another application.
+2025-07-11 14:32:51,241 jbaskara-mac /opt/homebrew/Cellar/openjdk@21/21.0.7/libexec/openjdk.jdk/Contents/Home/bin/java[48924] WARN  [io.qua.run.Application] (Quarkus Main Thread) Use 'netstat -anv | grep 8080' to identify the process occupying the port.
+2025-07-11 14:32:51,241 jbaskara-mac /opt/homebrew/Cellar/openjdk@21/21.0.7/libexec/openjdk.jdk/Contents/Home/bin/java[48924] WARN  [io.qua.run.Application] (Quarkus Main Thread) You can try to kill it with 'kill -9 <pid>'.
+2025-07-11 14:33:02,004 jbaskara-mac /opt/homebrew/Cellar/openjdk@21/21.0.7/libexec/openjdk.jdk/Contents/Home/bin/java[48924] ERROR [io.qua.mcp.ser.std.run.StdioMcpMessageHandler] (pool-8-thread-1) Unable to parse the JSON message: io.vertx.core.json.DecodeException: Failed to decode:No content to map due to end-of-input
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1]
+	at io.quarkus.vertx.runtime.jackson.QuarkusJacksonJsonCodec.fromParser(QuarkusJacksonJsonCodec.java:148)
+	at io.quarkus.vertx.runtime.jackson.QuarkusJacksonJsonCodec.fromString(QuarkusJacksonJsonCodec.java:115)
+	at io.vertx.core.json.Json.decodeValue(Json.java:83)
+	at io.vertx.core.json.Json.decodeValue(Json.java:95)
+	at io.quarkiverse.mcp.server.stdio.runtime.StdioMcpMessageHandler$1.run(StdioMcpMessageHandler.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:5062)
+	at com.fasterxml.jackson.databind.ObjectMapper._readValue(ObjectMapper.java:4933)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3055)
+	at io.quarkus.vertx.runtime.jackson.QuarkusJacksonJsonCodec.fromParser(QuarkusJacksonJsonCodec.java:145)
+	... 9 more
+
